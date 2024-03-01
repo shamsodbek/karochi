@@ -1,0 +1,30 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container{
+    max-width: 1140px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+li{
+    list-style: none;
+    
+}
+a{
+    text-decoration: none;
+}
+:root {
+    --family: 'portfolio';
+    --color1: #0ef;
+    --color2: #9CA3AF;
+    --clr-primary: teal;
+    --clr-secondary: crimson;
+    --bg-primary: #0d1a2d;
+    --bg-secondary: #14273e;
+    --text-primary: #fff;
+    --text-secondary: #ccc;
+    --yellow: yellow;
+}

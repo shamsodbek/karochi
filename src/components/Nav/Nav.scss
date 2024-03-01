@@ -1,0 +1,226 @@
+
+.nav_logo_text {
+    color: var(--color1);
+    animation: anim 1s ease forwards;
+    @include media(760){
+        font-size: 18px;
+    }
+  
+
+}
+
+@keyframes anim {
+    0% {
+        transform: translateX(-100);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.nav_logo_text:hover {
+    text-shadow: var(--color1)1px 0 10px,
+    1px 0 10px,
+    1px 0 10px,
+    1px 0 10px;
+    transition: 0.5s;
+}
+
+.nav_infoo {
+    padding: 15px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.nav_link {
+    position: relative;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 25px;
+    letter-spacing: -0.13px;
+    text-decoration: none;
+    margin-left: 2.5rem;
+    transition: all 0.5s ease;
+  }
+.nav_link:hover {
+    color: rgb(168, 239, 255, 0.9);
+  }
+  
+  .nav_link::after {
+    content: "";
+    position: absolute;
+    bottom: -0.3rem;
+    left: 50%;
+    width: 0;
+    height: 0.15rem;
+    transform: translateX(-50%);
+    background-color: rgb(168, 239, 255, 0.9);
+    transition: all 0.5s ease;
+  }
+  
+  .nav_link:hover::after {
+    width: 100%;
+  }
+
+.nav_list {
+    display: flex;
+    gap: 40px;
+    animation: list 0.5s forwards;
+    display: flex;
+    align-items: center;
+    column-gap: 30px;
+
+    @include media(700) {
+        position: fixed;
+        flex-direction: column;
+        align-items: center;
+        background-color: #000;
+        top: 0;
+        right: -300px;
+        height: 100vh;
+        padding: 60px;
+        transition: 0.5s;
+
+        &.active {
+            right: 0;
+        }
+    }
+
+}
+
+@keyframes list {
+    0% {
+        opacity: 0;
+        transform: translateY(6rem) rotate(-9deg);
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+.header_title {
+    font-size: 27px;
+    color: white;
+    animation: animBottom 0.5s ease forwards;
+    margin-bottom: 40px;
+}
+
+@keyframes animBottom {
+    0% {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+.nav {
+    background-color: black;
+    position: fixed;
+    width: 100%;
+    z-index: 99;
+    padding: 20px 0;
+    border-bottom: 2px solid #0ef;
+
+    @include media(700) {
+        padding: 20px 0;
+    }
+
+    @include media(500) {
+        padding: 15px 0;
+    }
+    
+
+    &__logo {
+        @include media(500) {
+            img {
+                width: 70px;
+            }
+        }
+    }
+
+    &__burger,
+    &__close {
+        display: none;
+
+        img {
+            width: 25px;
+        }
+
+        @include media(700) {
+            display: block;
+        }
+    }
+
+    &__close {
+        position: absolute;
+        top: 30px;
+        left: 30px;
+    }
+
+    &__box {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__list {
+        display: flex;
+        align-items: center;
+        column-gap: 30px;
+        @include media(700) {
+            position: fixed;
+            flex-direction: column;
+            align-items: center;
+            background-color: #000;
+            top: 0;
+            z-index: 1;
+            right: -300px;
+            height: 100vh;
+            padding: 60px;
+            transition: 0.5s;
+            gap: 40px   ;
+
+            &.active {
+                right: 0;
+            }
+        }
+    }
+
+    &__link {
+        position: relative;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 25px;
+    letter-spacing: -0.13px;
+    text-decoration: none;
+    margin-left: 2.5rem;
+    transition: all 0.5s ease;
+    }
+    &__link::after{
+        content: "";
+        position: absolute;
+        bottom: -0.3rem;
+        left: 50%;
+        width: 0;
+        height: 0.15rem;
+        transform: translateX(-50%);
+        background-color: rgb(168, 239, 255, 0.9);
+        transition: all 0.5s ease;
+    }
+    &__link:hover{
+        color: rgb(168, 239, 255, 0.9);
+    }
+    &__link:hover::after{
+        width: 100%;
+    }
+}
